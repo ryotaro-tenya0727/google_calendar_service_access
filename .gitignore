@@ -33,3 +33,5 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+/calender-project-358005-91cafccfb196.json
