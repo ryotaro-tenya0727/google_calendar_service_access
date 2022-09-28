@@ -9,7 +9,11 @@ class GoogleCalenderApiController < ApplicationController
     # entry = Google::Apis::CalendarV3::CalendarListEntry.new(
     # id: 'calendarId'
     # )
-    # byebug
-    calendar.list_events("ryotaro123110@gmail.com").items[-1]
+    calendars = calendar.list_events('ryotaro123110@gmail.com',
+                                     max_results: 10,
+                                     single_events: true,
+                                     order_by: 'startTime',
+                                     time_min: Time.now.iso8601).items
+    byebug
   end
 end
