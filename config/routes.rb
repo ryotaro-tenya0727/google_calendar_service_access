@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get  '/', to: 'static#index'
   resources :google_calender_api do
     get 'client', on: :collection
+    get 'callback', on: :collection
   end
 end

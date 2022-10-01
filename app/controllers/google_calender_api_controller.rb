@@ -21,3 +21,4 @@ class GoogleCalenderApiController < ApplicationController
 
   end
 end
+# ENV['S3_DIARY_OBJECT_KEY']
