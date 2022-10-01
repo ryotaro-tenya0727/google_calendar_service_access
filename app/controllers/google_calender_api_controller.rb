@@ -16,4 +16,8 @@ class GoogleCalenderApiController < ApplicationController
                                      time_min: Time.now.iso8601).items
     byebug
   end
+
+  def client
+
+  end
 end

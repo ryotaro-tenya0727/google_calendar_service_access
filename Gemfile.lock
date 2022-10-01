@@ -91,6 +91,10 @@ GEM
       reline (>= 0.3.1)
     declarative (0.0.20)
     digest (3.1.0)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.11.0)
     faraday (2.5.2)
       faraday-net_http (>= 2.0, < 3.1)
@@ -285,6 +289,7 @@ DEPENDENCIES
   byebug
   capybara
   debug
+  dotenv-rails
   google-apis-calendar_v3
   googleauth (~> 1.2)
   importmap-rails
