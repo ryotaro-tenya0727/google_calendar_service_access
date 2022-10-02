@@ -1,9 +1,11 @@
 class GoogleCalenderApiController < ApplicationController
+  SCOPE = Google::Apis::CalendarV3::AUTH_CALENDAR
+
   def index
     calendar = Google::Apis::CalendarV3::CalendarService.new
     calendar.authorization = Google::Auth::ServiceAccountCredentials.make_creds(
       json_key_io: File.open('/Users/ryotaro/Desktop/program_study/rails/google_calender/calender-project-358005-91cafccfb196.json'),
-      scope: Google::Apis::CalendarV3::AUTH_CALENDAR
+      scope: SCOPE
     )
     calendar.authorization.fetch_access_token!
     # entry = Google::Apis::CalendarV3::CalendarListEntry.new(
@@ -19,6 +21,16 @@ class GoogleCalenderApiController < ApplicationController
 
   def client
 
+  end
+
+  def callback
+
+  end
+
+  private
+
+  def client_id
+    @client_id ||= Google::Auth::ClientId.new(ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'])
   end
 end
 # ENV['S3_DIARY_OBJECT_KEY']
