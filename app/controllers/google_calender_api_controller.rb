@@ -20,7 +20,8 @@ class GoogleCalenderApiController < ApplicationController
   end
 
   def client
-
+    client_id = Google::Auth::ClientId.new(ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'])
+    authorizer = Google::Auth::UserAuthorizer.new(client_id, SCOPE)
   end
 
   def callback
